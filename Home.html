@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <center> <title>LearningMath</title> </center>
+</head>
+
+<body style="background: linear-gradient(to bottom, #dfeadb 0%, #eef4ee 55%, #f6f2df 100%); color:#476a63; font-family:'Trebuchet MS','Segoe UI',Arial,sans-serif;">
+
+  <a href="StudentPage.html" style="display:inline-block; padding:10px 20px; background-color:#d9ecf8; color:#476a63; text-decoration:none; border-radius:8px; font-weight:bold; margin-bottom:20px;">← Back to Student Portal</a>
+
+  <h1 style="color:#476a63;">Welcome to LearningMath</h1>
+  <p>Enter your name and grade:</p>
+
+  <input type="text" id="studentName" placeholder="e.g. Sarah 6D">
+  <button onclick="goToSite()">Enter</button>
+
+  <script>
+    function goToSite() {
+      const name = document.getElementById("studentName").value.trim();
+
+      if (name === "") {
+        alert("Please enter your name and grade!");
+        return;
+      }
+
+      localStorage.setItem("student", name);
+      window.location.href = "Welcome.html";
+    }
+  </script>
+
+</body>
+</html>
+
+<style> 
+button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #cfe8d0;
+        color: #476a63;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+</style>
+
+<br> <br> 
+
+<style>
+    left {
+        float: left;
+        margin-right: 20px;
+    }
+
+    right {
+        float: right;
+        margin-left: 20px;
+    }
+</style>
+
+<img src="https://i.postimg.cc/HxpXd9VJ/Screenshot-2569-02-04-at-22-18-06.png" alt="Math Poster" float="left"> 
+
+<img src="https://i.postimg.cc/Y9bg9LW2/Screenshot-2569-02-04-at-22-18-29.png" alt="Math Poster" float="right">
+
+<br> <br> 
+
+</html>
+
+
+
+ 
+

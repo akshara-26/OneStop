@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humanities Practice</title>
+  <style>
+    :root {
+      --bg-top: #dfeadb;
+      --bg-mid: #eef4ee;
+      --bg-bottom: #f6f2df;
+      --card: rgba(255,255,255,0.62);
+      --text-main: #476a63;
+      --text-soft: #6f8a83;
+      --border: rgba(108,151,140,0.20);
+      --shadow: rgba(73,112,103,0.12);
+      --btn-hover: #5da8b9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(to bottom, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 20px 60px;
+    }
+
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 14px rgba(83,117,110,0.10);
+    }
+
+    .hero, .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 34px 26px;
+      margin-bottom: 22px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .subtitle {
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .source-btn, .check-btn {
+      border: none;
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(255,255,255,0.72);
+      color: var(--text-main);
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(83,117,110,0.08);
+      transition: 0.2s ease;
+    }
+
+    .source-btn:hover, .check-btn:hover {
+      background: var(--btn-hover);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .feedback {
+      margin-top: 14px;
+      min-height: 28px;
+      font-weight: 700;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    label {
+      display: block;
+      background: rgba(255,255,255,0.68);
+      padding: 12px 14px;
+      border-radius: 16px;
+    }
+
+    .chart {
+      margin-top: 18px;
+      background: rgba(255,255,255,0.58);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .bar-row {
+      margin-bottom: 14px;
+    }
+
+    .bar-label {
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .bar-track {
+      background: rgba(207,232,208,0.6);
+      border-radius: 999px;
+      overflow: hidden;
+      height: 18px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, #8cc6ba, #5da8b9);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="back-link" href="StudentPage2.html">← Back to Student Subjects</a>
+
+    <section class="hero">
+      <h1>Humanities: Reliable Sources</h1>
+      <p class="subtitle">Good research depends on choosing useful and trustworthy sources. Try these quick activities to decide what makes information reliable.</p>
+    </section>
+
+    <section class="card">
+      <h2>Which source is most reliable?</h2>
+      <p>Choose the best source for learning about climate change:</p>
+
+      <div class="source-grid">
+        <button class="source-btn" onclick="showFeedback('h-feedback', false, 'A random blog may have opinions, but it may not be checked carefully.')">A personal blog with no author listed</button>
+        <button class="source-btn" onclick="showFeedback('h-feedback', true, 'Correct! Government science websites usually use reviewed and verified information.')">A government science website</button>
+        <button class="source-btn" onclick="showFeedback('h-feedback', false, 'A social media post may be interesting, but it is not always verified.')">A social media post</button>
+      </div>
+
+      <div id="h-feedback" class="feedback"></div>
+    </section>
+
+    <section class="card">
+      <h2>What makes a source useful?</h2>
+      <p>Tick the features that usually help make a source strong:</p>
+
+      <div class="checklist">
+        <label><input type="checkbox" id="c1"> The author is clearly named</label>
+        <label><input type="checkbox" id="c2"> The source gives evidence or data</label>
+        <label><input type="checkbox" id="c3"> The source is very old and never updated</label>
+        <label><input type="checkbox" id="c4"> The information matches other trusted sources</label>
+      </div>
+
+      <button class="check-btn" onclick="checkChecklist()" style="margin-top:16px;">Check My Answer</button>
+      <div id="check-feedback" class="feedback"></div>
+    </section>
+
+    <section class="card">
+      <h2>Source Strength Chart</h2>
+      <p>Different sources often vary in reliability:</p>
+
+      <div class="chart">
+        <div class="bar-row">
+          <div class="bar-label">Encyclopedia</div>
+          <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">School Textbook</div>
+          <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Unknown Website</div>
+          <div class="bar-track"><div class="bar-fill" style="width:42%"></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function showFeedback(id, correct, message) {
+      const box = document.getElementById(id);
+      box.textContent = message;
+      box.style.color = correct ? '#3f7c60' : '#a06565';
+    }
+
+    function checkChecklist() {
+      const c1 = document.getElementById('c1').checked;
+      const c2 = document.getElementById('c2').checked;
+      const c3 = document.getElementById('c3').checked;
+      const c4 = document.getElementById('c4').checked;
+      const box = document.getElementById('check-feedback');
+
+      if (c1 && c2 && !c3 && c4) {
+        box.textContent = 'Correct! Named authors, evidence, and matching trusted sources all strengthen reliability.';
+        box.style.color = '#3f7c60';
+      } else {
+        box.textContent = 'Check again: one option should not be selected.';
+        box.style.color = '#a06565';
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<body bgcolor="Ivory">
+
+<style>
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+.question {
+  margin: 15px 0;
+}
+</style>
+
+<center>
+  <h1 style="color:DarkBlue;">TODAY WE'RE LEARNING ABOUT DATA</h1>
+</center>
+
+<h4 style="color:DarkBlue;">
+First, let's find some mean, median, mode and range in data sets.
+<br><br>
+Below are 3 pictograms and some questions about each
+</h4>
+
+<br><br><br>
+
+<p style="color:DarkBlue;">
+One 🩵 is worth 4 people.
+<br><br>
+Below is the amount of students from each class who are present on a given day
+</p>
+
+<center>
+<table style="width:70%">
+<tr>
+  <th>Class</th>
+  <th>People</th>
+</tr>
+
+<tr>
+  <td>Grade 6A</td>
+  <td>🩵🩵🩵🩵🩵🩵🩵</td>
+</tr>
+
+<tr>
+  <td>Grade 6B</td>
+  <td>🩵🩵🩵🩵🩵</td>
+</tr>
+
+<tr>
+  <td>Grade 6C</td>
+  <td>🩵🩵🩵🩵🩵🩵🩵🩵</td>
+</tr>
+
+<tr>
+  <td>Grade 6D</td>
+  <td>🩵🩵🩵🩵</td>
+</tr>
+</table>
+</center>
+
+<p style="color:DarkBlue;">Answer the questions below</p>
+
+<div class="question">
+<p style="color:DarkBlue;">a. What is the Range of this data set?</p>
+<input type="text" id="q1">
+<p id="result1"></p>
+</div>
+
+<div class="question">
+<p style="color:DarkBlue;">b. What is the Mean of this data set?</p>
+<input type="text" id="q2">
+<p id="result2"></p>
+</div>
+
+<br><br>
+
+<p style="color:DarkBlue;">
+One 💎 is worth 2 gems.
+<br><br>
+Below is the amount of gems each kid owns.
+</p>
+
+<center>
+<table style="width:70%">
+<tr>
+  <th>Kid</th>
+  <th>Gems</th>
+</tr>
+
+<tr>
+  <td>Alice</td>
+  <td>💎💎💎💎</td>
+</tr>
+
+<tr>
+  <td>Ben</td>
+  <td>💎💎</td>
+</tr>
+
+<tr>
+  <td>Claire</td>
+  <td>💎💎💎💎💎💎</td>
+</tr>
+
+<tr>
+  <td>Darren</td>
+  <td>💎💎💎💎</td>
+</tr>
+
+<tr>
+  <td>Emily</td>
+  <td>💎💎💎💎💎</td>
+</tr>
+</table>
+</center>
+
+<div class="question">
+<p style="color:DarkBlue;">a. What is the Mode of this data set?</p>
+<input type="text" id="q3">
+<p id="result3"></p>
+</div>
+
+<div class="question">
+<p style="color:DarkBlue;">b. What is the Mean of this data set?</p>
+<input type="text" id="q4">
+<p id="result4"></p>
+</div>
+
+<br>
+
+<p style="color:DarkBlue;">
+One 💸 is worth 10 AED.
+<br><br>
+Below is the amount of money each house raises
+</p>
+
+<center>
+<table style="width:70%">
+<tr>
+  <th>House</th>
+  <th>Money</th>
+</tr>
+
+<tr>
+  <td>Ruby</td>
+  <td>💸💸💸💸</td>
+</tr>
+
+<tr>
+  <td>Topaz</td>
+  <td>💸💸</td>
+</tr>
+
+<tr>
+  <td>Emerald</td>
+  <td>💸💸💸💸💸💸💸</td>
+</tr>
+
+<tr>
+  <td>Diamond</td>
+  <td>💸💸💸</td>
+</tr>
+
+<tr>
+  <td>Sapphire</td>
+  <td>💸💸💸💸💸</td>
+</tr>
+</table>
+</center>
+
+<div class="question">
+<p style="color:DarkBlue;">a. What is the Median?</p>
+<input type="text" id="q5">
+<p id="result5"></p>
+</div>
+
+<div class="question">
+<p style="color:DarkBlue;">b. What is the Range?</p>
+<input type="text" id="q6">
+<p id="result6"></p>
+</div>
+
+<br><br>
+
+<button onclick="checkData()">Check Answers</button>
+
+<script>
+function checkData() {
+
+  const correctAnswers = [16, 24, 8, 8.4, 40, 50];
+
+  for (let i = 1; i <= 6; i++) {
+
+    let inputBox = document.getElementById("q" + i);
+    let resultBox = document.getElementById("result" + i);
+
+    let userAnswer = Number(inputBox.value);
+
+    if (inputBox.value.trim() === "" || isNaN(userAnswer)) {
+      resultBox.textContent = "⚠️ Enter a number";
+      resultBox.style.color = "orange";
+      inputBox.style.backgroundColor = "#fff3cd";
+      continue;
+    }
+
+    if (userAnswer === correctAnswers[i - 1]) {
+      resultBox.textContent = "✅ Correct!";
+      resultBox.style.color = "green";
+      inputBox.style.backgroundColor = "#c8e6c9";
+    } else {
+      resultBox.textContent = "❌ Try again!";
+      resultBox.style.color = "red";
+      inputBox.style.backgroundColor = "#ffcdd2";
+    }
+  }
+}
+</script>
+
+<br> <br> <br>
+
+<center> <h3 style="color:Navy;"> Ready to go home? <h3> </center>
+
+<center> <a href="index.html" class="btn"> TAKE ME HOME </a> </center>
+
+<style>
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: Plum;
+        color: AliceBlue;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+</style>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+ 
+
+
+
+
+

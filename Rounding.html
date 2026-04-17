@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html> 
+
+<body bgcolor=Ivory>
+
+<center> <h1 style="color:DarkBlue;"> TODAY WE'RE LEARNING ROUNDING </h1> </center> 
+
+<h4 style="color:DarkBlue;"> First, let's round to the nearest 10 </h4> 
+<section>
+    
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 1. 11= </p> 
+<input type="text" id="q1"> 
+<p id="result1"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 2. 25= </p> 
+<input type="text" id="q2"> 
+<p id="result2"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 3. 32= </p> 
+<input type="text" id="q3"> 
+<p id="result3"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 4. 68= </p> 
+<input type="text" id="q4"> 
+<p id="result4"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 5. 42= </p> 
+<input type="text" id="q5"> 
+<p id="result5"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 6. 94= </p> 
+<input type="text" id="q6"> 
+<p id="result6"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 7. 88= </p> 
+<input type="text" id="q7"> 
+<p id="result7"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 8. 53= </p> 
+<input type="text" id="q8"> 
+<p id="result8"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 9. 72= </p> 
+<input type="text" id="q9"> 
+<p id="result9"> </p> 
+</div>
+
+
+<div class:"question"> 
+
+<p style="color:DarkBlue;"> 10. 4= </p> 
+<input type="text" id="q10"> 
+<p id="result10"> </p> 
+</div>
+
+
+   <button onclick="checkSimplify()">Check Answers</button>
+</section>
+
+
+<script>
+function checkSimplify() {
+    // List of correct simplified answers as strings
+    const correctAnswers = ["10", "30", "30", "70", "40", "90", "90", "50", "70", "0"];
+
+    for (let i = 1; i <= 10; i++) {
+        let userAnswer = document.getElementById(`q${i}`).value.trim(); // remove spaces
+        let resultP = document.getElementById(`result${i}`);
+
+        // Check if answer matches correct number
+        if (userAnswer === correctAnswers[i - 1]) {
+            resultP.innerHTML = "✅ Correct!";
+            resultP.style.color = "green";
+            document.getElementById(`q${i}`).style.backgroundColor = "#c8e6c9"; // green input
+        } else {
+            resultP.innerHTML = "❌ Try again!";
+            resultP.style.color = "red";
+            document.getElementById(`q${i}`).style.backgroundColor = "#ffcdd2"; // red input
+        }
+    }
+}
+</script>
+
+
+
+
+
+<br> <br> <br> 
+
+
+<center> <h3 style="color:Navy;"> Ready to go home? <h3> </center>
+
+<center> <a href="index.html" class="btn"> TAKE ME HOME </a> </center>
+
+<style>
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: Plum;
+        color: AliceBlue;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+</style>
+
+</body>
+
+<html> 

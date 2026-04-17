@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Practice</title>
+  <style>
+    :root {
+      --bg-top: #dfeadb;
+      --bg-mid: #eef4ee;
+      --bg-bottom: #f6f2df;
+      --card: rgba(255,255,255,0.62);
+      --text-main: #476a63;
+      --text-soft: #6f8a83;
+      --border: rgba(108,151,140,0.20);
+      --shadow: rgba(73,112,103,0.12);
+      --btn-soft: #dff1e2;
+      --btn-hover: #5da8b9;
+      --bio: #dff1e2;
+      --chem: #d9ecf8;
+      --phys: #f4ebcf;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(to bottom, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px 60px;
+    }
+
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 14px rgba(83,117,110,0.10);
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 34px 26px;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .subtitle {
+      color: var(--text-soft);
+      margin: 12px auto 0;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 14px 30px var(--shadow);
+      padding: 24px 20px;
+    }
+
+    .bio { background: linear-gradient(180deg, rgba(223,241,226,0.88), rgba(255,255,255,0.68)); }
+    .chem { background: linear-gradient(180deg, rgba(217,236,248,0.88), rgba(255,255,255,0.68)); }
+    .phys { background: linear-gradient(180deg, rgba(244,235,207,0.88), rgba(255,255,255,0.68)); }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .prompt {
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .answers button, .check-btn {
+      border: none;
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.72);
+      color: var(--text-main);
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(83,117,110,0.08);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .answers button:hover, .check-btn:hover {
+      transform: translateY(-2px);
+      background: var(--btn-hover);
+      color: white;
+    }
+
+    .feedback {
+      margin-top: 12px;
+      min-height: 28px;
+      font-weight: 700;
+      color: #51746d;
+    }
+
+    .mini-chart {
+      margin: 14px 0 8px;
+      background: rgba(255,255,255,0.55);
+      border-radius: 18px;
+      padding: 14px 14px 8px;
+    }
+
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      height: 150px;
+      margin-top: 8px;
+    }
+
+    .bar-wrap {
+      flex: 1;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    .bar {
+      width: 100%;
+      border-radius: 12px 12px 0 0;
+      margin: 0 auto 8px;
+      background: linear-gradient(to top, #7eb7ab, #bde1d7);
+    }
+
+    .line-box {
+      margin: 12px 0 10px;
+      background: rgba(255,255,255,0.55);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    input[type="number"] {
+      flex: 1;
+      min-width: 120px;
+      border: 1px solid rgba(98,139,129,0.20);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 1rem;
+      color: var(--text-main);
+      background: rgba(255,255,255,0.75);
+    }
+
+    .small-note {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="back-link" href="StudentPage2.html">← Back to Student Subjects</a>
+
+    <section class="hero">
+      <h1>Science Practice Lab</h1>
+      <p class="subtitle">Try a few Biology, Chemistry, and Physics questions. Use the diagrams, think carefully, and check your own answers instantly.</p>
+    </section>
+
+    <div class="grid">
+      <section class="section bio">
+        <h2>Biology</h2>
+        <p class="prompt"><strong>Plant Growth Graph:</strong> Three plants were kept in different amounts of sunlight for one week.</p>
+
+        <div class="mini-chart">
+          <strong>Height after 7 days (cm)</strong>
+          <div class="bars">
+            <div class="bar-wrap">
+              <div class="bar" style="height: 70px;"></div>
+              Shade<br>7 cm
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="height: 110px;"></div>
+              Medium Sun<br>11 cm
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" style="height: 140px;"></div>
+              Full Sun<br>14 cm
+            </div>
+          </div>
+        </div>
+
+        <p class="prompt">Which plant grew the tallest?</p>
+        <div class="answers">
+          <button onclick="showFeedback('bio-feedback', true, 'Correct! The plant in full sun reached 14 cm, so it grew the tallest.')">Full Sun</button>
+          <button onclick="showFeedback('bio-feedback', false, 'Not quite. Check which bar is the tallest.')">Shade</button>
+          <button onclick="showFeedback('bio-feedback', false, 'Close, but the tallest bar is a bit higher.')">Medium Sun</button>
+        </div>
+        <div id="bio-feedback" class="feedback"></div>
+      </section>
+
+      <section class="section chem">
+        <h2>Chemistry</h2>
+        <p class="prompt"><strong>Temperature Change Graph:</strong> A beaker of water was heated for 4 minutes.</p>
+
+        <div class="line-box">
+          <svg viewBox="0 0 300 180" aria-label="Temperature line graph">
+            <line x1="40" y1="20" x2="40" y2="150" stroke="#7b9b95" stroke-width="2" />
+            <line x1="40" y1="150" x2="270" y2="150" stroke="#7b9b95" stroke-width="2" />
+            <text x="8" y="26" font-size="11" fill="#6f8a83">60</text>
+            <text x="8" y="70" font-size="11" fill="#6f8a83">40</text>
+            <text x="8" y="114" font-size="11" fill="#6f8a83">20</text>
+            <text x="120" y="175" font-size="11" fill="#6f8a83">Time (min)</text>
+            <polyline fill="none" stroke="#6fa9ba" stroke-width="4" points="40,130 95,110 150,85 205,60 260,35" />
+            <circle cx="40" cy="130" r="4" fill="#6fa9ba" />
+            <circle cx="95" cy="110" r="4" fill="#6fa9ba" />
+            <circle cx="150" cy="85" r="4" fill="#6fa9ba" />
+            <circle cx="205" cy="60" r="4" fill="#6fa9ba" />
+            <circle cx="260" cy="35" r="4" fill="#6fa9ba" />
+            <text x="36" y="165" font-size="11" fill="#6f8a83">0</text>
+            <text x="92" y="165" font-size="11" fill="#6f8a83">1</text>
+            <text x="147" y="165" font-size="11" fill="#6f8a83">2</text>
+            <text x="202" y="165" font-size="11" fill="#6f8a83">3</text>
+            <text x="257" y="165" font-size="11" fill="#6f8a83">4</text>
+          </svg>
+        </div>
+
+        <p class="prompt">What happened to the temperature as time went on?</p>
+        <div class="answers">
+          <button onclick="showFeedback('chem-feedback', true, 'Correct! The line goes upward, so the temperature increased as heating continued.')">It increased</button>
+          <button onclick="showFeedback('chem-feedback', false, 'No — a downward line would show cooling.')">It decreased</button>
+          <button onclick="showFeedback('chem-feedback', false, 'Not this time. The graph shows a clear change.')">It stayed the same</button>
+        </div>
+        <div id="chem-feedback" class="feedback"></div>
+      </section>
+
+      <section class="section phys">
+        <h2>Physics</h2>
+        <p class="prompt"><strong>Speed Question:</strong> A toy car travels <strong>12 metres</strong> in <strong>3 seconds</strong>.</p>
+        <p class="prompt">Use the rule: <strong>speed = distance ÷ time</strong></p>
+
+        <div class="input-row">
+          <input type="number" id="phys-answer" placeholder="Enter the speed" />
+          <button class="check-btn" onclick="checkPhysics()">Check Answer</button>
+        </div>
+        <div id="phys-feedback" class="feedback"></div>
+        <p class="small-note">Write only the number. The unit would be metres per second.</p>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function showFeedback(id, isCorrect, message) {
+      const el = document.getElementById(id);
+      el.textContent = message;
+      el.style.color = isCorrect ? '#3f7c60' : '#a06565';
+    }
+
+    function checkPhysics() {
+      const answer = document.getElementById('phys-answer').value.trim();
+      const feedback = document.getElementById('phys-feedback');
+
+      if (answer === '') {
+        feedback.textContent = 'Please enter an answer first.';
+        feedback.style.color = '#a06565';
+        return;
+      }
+
+      if (Number(answer) === 4) {
+        feedback.textContent = 'Correct! 12 ÷ 3 = 4 metres per second.';
+        feedback.style.color = '#3f7c60';
+      } else {
+        feedback.textContent = 'Not quite. Try dividing the distance by the time again.';
+        feedback.style.color = '#a06565';
+      }
+    }
+  </script>
+</body>
+</html>

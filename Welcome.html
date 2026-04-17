@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+
+<html style="background-color:#F8F5EF;">
+
+<h1 id="welcomeMessage" style="color:#5B6C5D; text-align:center;">Welcome!</h1>
+
+<script>
+  // 1. Go to the locker and get the info
+  let name = localStorage.getItem('savedName');
+  let studentClass = localStorage.getItem('savedClass');
+
+  // 2. If we found a name, change the H1 text
+  if (name && studentClass) {
+    document.getElementById('welcomeMessage').innerText = "Welcome " + name + ", " + studentClass + "!";
+  }
+</script>
+
+<center> <h2 style="color:#6C8AA6;"> Choose a topic </h2> </center>
+
+<center> 
+<a href="Fractions.html" class="btn">Go to FRACTIONS!!</a> 
+<a href="Ratios.html" class="btn"> Go to RATIOS!! </a>
+<a href="Rounding.html" class="btn"> Go to ROUNDING!! </a> 
+<a href="Data.html" class="btn"> Go to DATA!! </a>
+<br> <br> 
+<a href="Home.html" class="btn"> Go back to the MAIN PAGE!! </a>
+</center>
+
+<style>
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #A8BFA3;
+        color: #F8F5EF;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    .btn:hover {
+        background-color: #8FAE8B;
+    }
+</style>
+
+<center> <h1 style="color:#5B6C5D;"> HAPPY LEARNING!!! </h1> </center> 
+
+<center> 
+<img src="https://i.postimg.cc/XvM14mfq/Screenshot-2569-02-05-at-15-55-35.png" alt="Math Poster" style="border-radius:12px;">
+</center>
+
+<script>
+  window.onload = function () {
+    const student = localStorage.getItem("student");
+
+    if (student) {
+      alert("Welcome, " + student + "!");
+    }
+  };
+</script>
+
+</html>

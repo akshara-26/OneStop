@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Stop Teacher Grade 6</title>
+  <style>
+    :root {
+      --bg-top: #dfeadb;
+      --bg-mid: #eef4ee;
+      --bg-bottom: #f6f2df;
+      --card: rgba(255,255,255,0.58);
+      --text-main: #476a63;
+      --text-soft: #6f8a83;
+      --border: rgba(108,151,140,0.20);
+      --shadow: rgba(73,112,103,0.12);
+      --btn-soft: #dff1e2;
+      --btn-hover: #5da8b9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
+      color: var(--text-main);
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 14px rgba(83,117,110,0.10);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 40px 28px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .subtitle {
+      color: var(--text-soft);
+      margin-bottom: 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 82px;
+      text-decoration: none;
+      background: var(--btn-soft);
+      border-radius: 22px;
+      color: var(--text-main);
+      font-weight: 700;
+      padding: 14px;
+      border: 1px solid rgba(98,139,129,0.15);
+      box-shadow: 0 8px 16px rgba(83,117,110,0.08);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--btn-hover);
+      color: white;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="back-link" href="TeacherPage.html">← Back to Teacher Portal</a>
+
+    <section class="card">
+      <h1>Teacher Tools</h1>
+      <p class="subtitle">Manage teaching actions clearly and quickly.</p>
+
+      <div class="grid">
+        <a class="btn" href="TeacherFiller.html">Upload Assessments and Grading</a>
+        <a class="btn" href="TeacherFiller.html">Upload Assignments and Deadline</a>
+         <a class="btn" href="TeacherFiller.html">Post study materials</a>
+        <a class="btn" href="TeacherFiller.html">Give Behaviour / Reward Point</a>
+        <a class="btn" href="TeacherFiller.html">Student Contact Info</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
